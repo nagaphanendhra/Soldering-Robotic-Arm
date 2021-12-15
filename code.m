@@ -37,10 +37,10 @@ imshow(e);
 hold on;
 viscircles(centers, radii,'EdgeColor','r');
 %plot(centers(1), centers(2), '+');
-p1=centers(1,1);
-p2=centers(1,2);
-p3=centers(2,1);
-p4=centers(2,2);
+p1 = 2; %2-2.6 
+p2 = 2.5; %2.5-3.8
+p3 = 2.5; %2.5-3.95
+p4 = 2;
 pin1=readVoltage(a,'A8');
 pin2=readVoltage(a,'A9');
 pin3=readVoltage(a,'A10');
