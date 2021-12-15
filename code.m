@@ -132,6 +132,33 @@ stop(dcm3);
 writeDigitalPin(a,'D22',0);
 end
 
-
+%Motor 4
+while abs(pin4-p4) > 0.2
+pin4=readVoltage(a,'A11');
+fprintf('value of a: %d\n', pin4);
+if pin4>p4
+dcm4.Speed = -0.9;
+start(dcm4);
+else
+dcm4.Speed = 0.9;
+start(dcm4);
+end
+stop(dcm4);
+end
+while abs(pin4-p4) >= 0.04
+writeDigitalPin(a,'D22',4);
+writeDigitalPin(a,'D23',0);
+pin4=readVoltage(a,'A11');
+fprintf('value of a: %d\n', pin4);
+if pin4>p4
+dcm4.Speed = -0.9;
+start(dcm4);
+else
+dcm4.Speed = 0.9;
+start(dcm4);
+end
+stop(dcm4);
+writeDigitalPin(a,'D22',0);
+end
 
 end
